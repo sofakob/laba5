@@ -1,14 +1,11 @@
-# Используйте официальный образ Python как базовый
-FROM python:3.8-slim
+FROM python:latest
 
-# Установите рабочий каталог в контейнере
-WORKDIR /app
+WORKDIR /usr/app/src
 
-# Скопируйте файлы приложения и тестов в контейнер
-COPY . .
+COPY requirements.txt ./
 
-# Установите зависимости
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
-# Запустите тесты (предполагается, что у вас есть файл test.py)
-CMD ["python", "laba5Test.py"]
+COPY laba5Test.py ./
+
+CMD ["pytest", "laba5Test.py"]
