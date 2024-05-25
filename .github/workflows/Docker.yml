@@ -18,4 +18,4 @@ jobs:
       - name: push image docker 
         run: docker push sofakorra/laba5:tagname
       - name: run test in docker container
-        run: docker run sofakorra/laba5:tagname
+        run: docker run laba5
