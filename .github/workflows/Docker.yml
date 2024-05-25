@@ -14,8 +14,8 @@ jobs:
       - name: Login to DockerHub Registry
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
       - name: docker build
-        run: docker build -t igromanytss/aimvector .
+        run: docker build -t sofakorra/laba5:tagname .
       - name: push image docker 
-        run: docker push igromanytss/aimvector
+        run: docker push sofakorra/laba5:tagname
       - name: run test in docker container
-        run: docker run igromanytss/aimvector
+        run: docker run sofakorra/laba5:tagname
